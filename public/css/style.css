@@ -32,6 +32,37 @@ div {
     border-radius: 20px;
 }
 
+/* tranzitie pagini */
+@keyframes fade-out {
+    
+    to { opacity: 0; }
+}
+@keyframes fade-in {
+    
+    from { opacity: 0; }
+}
+@keyframes slide-out {
+    
+    to { transform: translateY(90px); }
+}
+@keyframes slide-in {
+    
+    from { transform: translateY(-90px); }
+}
+
+.transition {
+
+    view-transition-name: pageChange;
+}
+::view-transition-old(pageChange) {
+
+    animation: fade-out 300ms ease-in both, slide-out 600ms ease-in both;
+}
+::view-transition-new(pageChange) {
+
+    animation: fade-in 600ms ease-in-out 600ms both, slide-in 600ms ease-in-out both;
+}
+
 /* home page */
 
 .grid {

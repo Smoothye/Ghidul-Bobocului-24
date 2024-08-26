@@ -1,6 +1,6 @@
 const homePage = () => /*html*/ `
 
-    <main id="main" class="flex">
+    <main id="main" class="flex transition">
 
         <div class="grid">
             

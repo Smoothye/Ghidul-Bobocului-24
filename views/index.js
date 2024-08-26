@@ -12,10 +12,10 @@ const welcomePage = () => /*html*/ `
 
             <main
                 id="main"
-                class="flex"
+                class="flex transition"
                 hx-get="/homePage"
                 hx-trigger="click"
-                hx-swap="outerHTML"
+                hx-swap="outerHTML transition:true"
             >
                 
                 <div id="welcome-banner"> Banner / Welcome page / Ceva </div>
