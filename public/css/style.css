@@ -3,7 +3,8 @@
     
 } */
 
-body {
+/* general */
+* {
 
     padding: 0;
     margin: 0;
@@ -24,3 +25,46 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+/* home page */
+
+.grid {
+    
+    display: grid;
+
+    width: 100%;
+    height: 100%;
+
+    grid-template-areas:
+    'topbar     topbar      topbar      topbar  '
+    'text       text        ghid        ghid    '
+    'text       text        ghid        ghid    '
+    'parteneri  parteneri   ghid        ghid    ';
+
+    gap: 20px 20px;
+    grid-template-columns: 1fr 1fr 2fr 2fr;
+    grid-template-rows: 2fr 4fr 4fr 1fr;
+}
+
+#item-1 {
+
+    grid-area: topbar;
+    background-color: blue;
+}
+
+#item-2 {
+    grid-area: text;
+    background-color: green;
+}
+
+#item-3 {
+    grid-area: ghid;
+    background-color: yellow;
+}
+
+#item-4 {
+    grid-area: parteneri;
+    background-color: red;
+}
+
+/*  */
