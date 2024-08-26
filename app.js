@@ -1,6 +1,7 @@
 import express from "express"
 import welcomePage from "./views/index.js";
 import homePage from "./views/homePage.js";
+import paginaParteneri from "./views/paginaParteneri.js";
 
 const app = express();
 app.use(express.urlencoded({extended: false})); // parse URL-encoded request bodies
@@ -14,6 +15,11 @@ app.get('/', (req, res) => { // index page
 app.get('/homePage', (req, res) => {
 
     res.send(homePage());
+});
+
+app.get('/parteneri', (req, res) => {
+
+    res.send(paginaParteneri())
 });
 
 app.listen(3000, () => {

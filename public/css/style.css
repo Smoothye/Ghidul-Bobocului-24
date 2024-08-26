@@ -17,7 +17,6 @@ main {
     height: 100vh;
 
     font-size: 2em;
-    /* overflow: hidden; */
 }
 
 .flex {
@@ -27,9 +26,16 @@ main {
     align-items: center;
 }
 
+.flex-orizontal {
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
 div {
 
-    border-radius: 20px;
+    border-radius: 1rem;
 }
 
 /* tranzitie pagini */
@@ -124,4 +130,42 @@ div {
     scale: 1.1;
 }
 
-/*  */
+/* pagina parteneri */
+.parteneri {
+
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    padding-bottom: 5%;
+}
+
+.card-partener {
+
+    border: 0.1em solid black;
+
+    height: 20rem;
+    width: 15rem;
+
+    position: relative;
+}
+
+.nume-partener {
+
+    height: 30%;
+    width: 100%;
+    background-color: green;
+
+    position: absolute;
+    top: 0;
+}
+
+.logo-partener {
+
+    height: 70%;
+    width: 100%;
+    background-color: yellow;
+
+    position: absolute;
+    bottom: 0;
+}

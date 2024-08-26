@@ -11,7 +11,16 @@ const homePage = () => /*html*/ `
                 <div id="coperta-ghid" class="flex"> GB </div>
 
             </div>
-            <div class="grid-item flex" id="parteneri"> Parteneri </div>
+            <div
+                class="grid-item flex"
+                id="parteneri"
+                hx-get="/parteneri"
+                hx-trigger="click"
+                hx-target="#main"
+                hx-swap="outerHTML transition:true"
+            >
+                Parteneri
+            </div>
 
         </div>
 
