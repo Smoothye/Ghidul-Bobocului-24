@@ -17,6 +17,7 @@ main {
     height: 100vh;
 
     font-size: 2em;
+    /* overflow: hidden; */
 }
 
 .flex {
@@ -26,14 +27,19 @@ main {
     align-items: center;
 }
 
+div {
+
+    border-radius: 20px;
+}
+
 /* home page */
 
 .grid {
     
     display: grid;
 
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 90%;
 
     grid-template-areas:
     'topbar     topbar      topbar      topbar  '
@@ -42,29 +48,49 @@ main {
     'parteneri  parteneri   ghid        ghid    ';
 
     gap: 20px 20px;
-    grid-template-columns: 1fr 1fr 2fr 2fr;
+    grid-template-columns: 1fr 2fr 1fr 2fr;
     grid-template-rows: 2fr 4fr 4fr 1fr;
 }
 
-#item-1 {
+#banner-ghid {
 
     grid-area: topbar;
     background-color: blue;
 }
 
-#item-2 {
+#text-home-page {
     grid-area: text;
     background-color: green;
 }
 
-#item-3 {
+#ghid {
     grid-area: ghid;
     background-color: yellow;
 }
 
-#item-4 {
+#parteneri {
     grid-area: parteneri;
     background-color: red;
+    transition: 1s;
+}
+#parteneri:hover {
+
+    cursor: pointer;
+    scale: 1.1;
+}
+
+#coperta-ghid {
+
+    width: 400px;
+    height: 500px;
+    background-color: purple;
+
+    transition: 1s;
+}
+#coperta-ghid:hover {
+
+    cursor: pointer;
+    scale: 1.1;
 }
 
 /*  */

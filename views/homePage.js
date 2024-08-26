@@ -1,13 +1,17 @@
 const homePage = () => /*html*/ `
 
-    <main id="main">
+    <main id="main" class="flex">
 
         <div class="grid">
             
-            <div class="grid-item flex" id="item-1"> Titlu GB24 </div>
-            <div class="grid-item flex" id="item-2"> Text Ceva Chestii </div>
-            <div class="grid-item flex" id="item-3"> GB </div>
-            <div class="grid-item flex" id="item-4"> Parteneri </div>
+            <div class="grid-item flex" id="banner-ghid"> Titlu GB24 </div>
+            <div class="grid-item flex" id="text-home-page"> Text Ceva Chestii </div>
+            <div class="grid-item flex" id="ghid">
+
+                <div id="coperta-ghid" class="flex"> GB </div>
+
+            </div>
+            <div class="grid-item flex" id="parteneri"> Parteneri </div>
 
         </div>
 
