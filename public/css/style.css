@@ -1,0 +1,26 @@
+/* .root {
+
+    
+} */
+
+body {
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    
+    width: 100vw;
+    height: 100vh;
+
+    font-size: 2em;
+}
+
+.flex {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
