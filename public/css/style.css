@@ -40,10 +40,25 @@ main {
     gap: 30px;
 }
 
-/* div {
+#back-button {
 
-    border-radius: 1rem;
-} */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+
+    font-size: large;
+    font-weight: 900;
+
+    transition: 1s;
+}
+#back-button:hover {
+
+    cursor: pointer;
+}
 
 /* tranzitie pagini */
 @keyframes fade-out {
