@@ -14,7 +14,7 @@ const welcomePage = () => /*html*/ `
                 id="main"
                 class="flex transition"
                 hx-get="/homePage"
-                hx-trigger="intersect 2s"
+                hx-trigger="intersect delay:2s"
                 hx-swap="outerHTML transition:true"
             >
                 
