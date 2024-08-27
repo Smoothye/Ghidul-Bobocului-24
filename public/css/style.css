@@ -11,12 +11,19 @@
     box-sizing: border-box;
 }
 
-main {
-    
-    width: 90vw;
+body {
+
+    width: 100vw;
     height: 100vh;
 
-    font-size: 2em;
+    font-size: 2em; /*temporary*/
+    overflow-x: hidden;
+}
+
+main {
+    
+    width: 100%;
+    height: 100%;
 }
 
 .flex {
@@ -41,8 +48,6 @@ main {
 }
 
 #back-button {
-
-    display: block;
 
     position: fixed;
     top: 10px;

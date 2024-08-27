@@ -6,7 +6,7 @@ const book = () => /*html*/ `
     <main id="main" class="flex transition" style="overflow:hidden;">
         <script src="java_script/animatieGhid.js" defer></script>
         
-        <!-- ${templateBackButton()} -->
+        ${templateBackButton()}
 
         <div id="book-wrapper">
 
