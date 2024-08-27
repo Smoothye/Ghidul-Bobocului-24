@@ -8,7 +8,7 @@ const welcomePage = () => /*html*/ `
             <script src="java_script/htmx.min.js"></script>
         </head>
 
-        <body>
+        <body class="flex">
 
             <main
                 id="main"

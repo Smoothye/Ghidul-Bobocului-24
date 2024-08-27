@@ -4,13 +4,14 @@ const paginaParteneri = () => /*html*/ `
 
     <main id="main" class="transition">
 
-        <div class="flex flex-orizontal parteneri">
+        <div class="parteneri flex flex-orizontal">
 
-            ${templateCardParteneri()}    
-            ${templateCardParteneri()}   
-            ${templateCardParteneri()}   
-            ${templateCardParteneri()}   
-            ${templateCardParteneri()}   
+            ${templateCardParteneri()}
+            ${templateCardParteneri()}
+            ${templateCardParteneri()}
+            ${templateCardParteneri()}
+            ${templateCardParteneri()}
+            ${templateCardParteneri()}
             
         </div>
         
