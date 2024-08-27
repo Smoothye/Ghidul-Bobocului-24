@@ -1,5 +1,4 @@
 const templateBackButton = () => /*html*/ `
-
     <button
         id="back-button"
         hx-get="/homePage"

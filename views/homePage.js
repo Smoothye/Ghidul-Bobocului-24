@@ -8,7 +8,16 @@ const homePage = () => /*html*/ `
             <div class="grid-item flex" id="text-home-page"> Text Ceva Chestii </div>
             <div class="grid-item flex" id="ghid">
 
-                <div id="coperta-ghid" class="flex"> GB </div>
+                <div
+                    id="coperta-ghid"
+                    class="flex"
+                    hx-get="/ghid"
+                    hx-trigger="click"
+                    hx-target="#main"
+                    hx-swap="outerHTML transition:true"
+                >
+                    GB
+                </div>
 
             </div>
             <div

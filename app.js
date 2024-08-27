@@ -2,6 +2,7 @@ import express from "express"
 import welcomePage from "./views/index.js";
 import homePage from "./views/homePage.js";
 import paginaParteneri from "./views/paginaParteneri.js";
+import ghid from "./views/ghid.js";
 
 const app = express();
 app.use(express.urlencoded({extended: false})); // parse URL-encoded request bodies
@@ -19,7 +20,12 @@ app.get('/homePage', (req, res) => {
 
 app.get('/parteneri', (req, res) => {
 
-    res.send(paginaParteneri())
+    res.send(paginaParteneri());
+});
+
+app.get('/ghid', (req, res) => {
+
+    res.send(ghid());
 });
 
 app.listen(3000, () => {
