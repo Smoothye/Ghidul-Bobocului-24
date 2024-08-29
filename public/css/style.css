@@ -1,7 +1,76 @@
-/* .root {
+:root {
+    --page-width: 396.85px;
+    --page-height: 559.37px;
 
+    /* ghid */
+    --page-flip-duration: 1s;
+    --book-move-duration: 1s;
+    --page-flip-perspective: 3000px;
+    --book-page-width: var(--page-width);
+    --book-page-height: var(--page-height);
     
-} */
+    /* parteneri */
+    --card-parteneri-width: 200px;
+    --card-parteneri-height: 400px;
+
+    /* flex */
+    --flex-item-gap: 30px;
+
+    /* back buttono */
+    --back-button-width: 50px;
+    --back-button-height: 50px;
+
+    /* home page */
+    --ghid-home-page-width: var(--page-width);
+    --ghid-home-page-height: var(--page-height);
+    --viteza-zoom-on-hover: 500ms;
+    --scale-factor-zoom-on-hover: 1.05;
+
+    /* grid */
+    --grid-width: 80%;
+    --grid-height: 90%;
+    --grid-area:
+        'topbar     topbar      topbar      topbar  '
+        'text       text        ghid        ghid    '
+        'text       text        ghid        ghid    '
+        'parteneri  parteneri   ghid        ghid    ';
+    --grid-columns-width: 1fr 2fr 1fr 2fr;
+    --grid-rows-height: 1fr 4fr 4fr 1fr;
+}
+
+@media screen and (max-width: 37.5em) { /* small screen change display mode */
+    /* 37.5em ~ 600px default */
+}
+@media screen and (min-width:37.5em) and (max-width: 50em) {
+    /* 50em ~ 800px default */
+    
+    :root {
+
+        --book-page-width: calc(var(--page-width) * 0.75);
+        --book-page-height: calc(var(--page-height) * 0.75);
+    }
+}
+@media screen and (max-width: 37.5em) {
+    
+    :root {
+
+        --grid-area:
+            'topbar'
+            'text'
+            'ghid'
+            'parteneri';
+        --grid-columns-width: var(--page-width);
+        --grid-rows-height: 100px 400px var(--page-height) 100px;
+    }
+}
+@media screen and (min-width: 37.5em) and (max-width: 65em) {
+    
+    :root {
+
+        --grid-columns-width: 1fr 1fr repeat(2, calc(var(--page-width) / 2));
+
+    }
+}
 
 /* general */
 * {
@@ -37,14 +106,14 @@ main {
 
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: var(--flex-item-gap);
 }
 
 .flex-vertical {
 
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: var(--flex-item-gap);
 }
 
 #back-button {
@@ -53,14 +122,12 @@ main {
     top: 10px;
     left: 10px;
 
-    width: 50px;
-    height: 50px;
+    width: var(--back-button-width);
+    height: var(--back-button-height);
     border: 1px solid black;
 
     font-size: large;
     font-weight: 900;
-
-    transition: 1s;
 }
 #back-button:hover {
 
@@ -104,18 +171,14 @@ main {
     
     display: grid;
 
-    width: 80%;
-    height: 90%;
+    width: var(--grid-width);
+    height: var(--grid-height);
 
-    grid-template-areas:
-    'topbar     topbar      topbar      topbar  '
-    'text       text        ghid        ghid    '
-    'text       text        ghid        ghid    '
-    'parteneri  parteneri   ghid        ghid    ';
+    grid-template-areas: var(--grid-area);
 
     gap: 20px 20px;
-    grid-template-columns: 1fr 2fr 1fr 2fr;
-    grid-template-rows: 2fr 4fr 4fr 1fr;
+    grid-template-columns: var(--grid-columns-width);
+    grid-template-rows: var(--grid-rows-height);
 }
 
 #banner-ghid {
@@ -131,32 +194,32 @@ main {
 
 #ghid {
     grid-area: ghid;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 #parteneri {
     grid-area: parteneri;
     background-color: red;
-    transition: 1s;
+    transition: var(--viteza-zoom-on-hover);
 }
 #parteneri:hover {
 
     cursor: pointer;
-    scale: 1.1;
+    scale: var(--scale-factor-zoom-on-hover);
 }
 
 #coperta-ghid {
 
-    width: 400px;
-    height: 500px;
-    background-color: purple;
+    width: var(--ghid-home-page-width);
+    height: var(--ghid-home-page-height);
+    /* background-color: purple; */
 
-    transition: 1s;
+    transition: var(--viteza-zoom-on-hover);
 }
 #coperta-ghid:hover {
 
     cursor: pointer;
-    scale: 1.1;
+    scale: var(--scale-factor-zoom-on-hover);
 }
 
 /* pagina parteneri */
@@ -171,8 +234,8 @@ main {
 
 .card-partener{
 
-    width: 200px;
-    height: 400px;
+    width: var(--card-parteneri-width);
+    height: var(--card-parteneri-height);
     position: relative;
 
     border: 1px solid black;
@@ -203,10 +266,10 @@ main {
 #book-wrapper {
 
     position: relative;
-    width: 40vw;
-    height: 90vh;
+    width: var(--book-page-width);
+    height: var(--book-page-height);
 
-    transition: transform 1s;
+    transition: transform var(--book-move-duration);
 }
 
 #book {
@@ -250,7 +313,7 @@ main {
     top: 0;
     left: 0;
 
-    perspective: 3000px;
+    perspective: var(--page-flip-perspective);
 }
 
 .front,
@@ -268,7 +331,7 @@ main {
 
     transform-origin: left;
 
-    transition: transform 1s;
+    transition: transform var(--page-flip-duration);
 }
 
 .front {

@@ -16,7 +16,7 @@ const homePage = () => /*html*/ `
                     hx-target="#main"
                     hx-swap="outerHTML transition:true"
                 >
-                    GB
+                    <img src="media/coperta_fata.svg" width="100%" height="100%">
                 </div>
 
             </div>
