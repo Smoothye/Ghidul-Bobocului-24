@@ -38,40 +38,6 @@
     --grid-rows-height: 1fr 4fr 4fr 1fr;
 }
 
-@media screen and (max-width: 37.5em) { /* small screen change display mode */
-    /* 37.5em ~ 600px default */
-}
-@media screen and (min-width:37.5em) and (max-width: 50em) {
-    /* 50em ~ 800px default */
-    
-    :root {
-
-        --book-page-width: calc(var(--page-width) * 0.75);
-        --book-page-height: calc(var(--page-height) * 0.75);
-    }
-}
-@media screen and (max-width: 37.5em) {
-    
-    :root {
-
-        --grid-area:
-            'topbar'
-            'text'
-            'ghid'
-            'parteneri';
-        --grid-columns-width: var(--page-width);
-        --grid-rows-height: 100px 400px var(--page-height) 100px;
-    }
-}
-@media screen and (min-width: 37.5em) and (max-width: 65em) {
-    
-    :root {
-
-        --grid-columns-width: 1fr 1fr repeat(2, calc(var(--page-width) / 2));
-
-    }
-}
-
 /* general */
 * {
 
@@ -167,6 +133,27 @@ main {
 
 /* home page */
 
+@media screen and (max-width: 37.5em /* 600px */) {
+    
+    :root {
+
+        --grid-area:
+            'topbar'
+            'text'
+            'ghid'
+            'parteneri';
+        --grid-columns-width: var(--page-width);
+        --grid-rows-height: 100px 400px var(--page-height) 100px;
+    }
+}
+@media screen and (min-width: 37.5em /* 600px */) and (max-width: 65em /* 1040px */) {
+    
+    :root {
+
+        --grid-columns-width: minmax(200px, 1fr) 0 minmax(70%, var(--page-width)) 0;
+    }
+}
+
 .grid {
     
     display: grid;
@@ -179,6 +166,12 @@ main {
     gap: 20px 20px;
     grid-template-columns: var(--grid-columns-width);
     grid-template-rows: var(--grid-rows-height);
+}
+
+.grid-item {
+
+    height: 100%;
+    width: 100%;
 }
 
 #banner-ghid {
@@ -262,6 +255,18 @@ main {
 }
 
 /* ghid */
+
+@media screen and (max-width: 37.5em /* 600px */) { /* small screen change display mode */
+    
+}
+@media screen and (min-width: 37.5em /* 600px */) and (max-width: 50em /* 800px */) {
+    
+    :root {
+
+        --book-page-width: calc(var(--page-width) * 0.75);
+        --book-page-height: calc(var(--page-height) * 0.75);
+    }
+}
 
 #book-wrapper {
 

@@ -2,7 +2,7 @@ const homePage = () => /*html*/ `
 
     <main id="main" class="flex transition">
 
-        <div class="grid">
+        <div class="grid flex">
             
             <div class="grid-item flex" id="banner-ghid"> Titlu GB24 </div>
             <div class="grid-item flex" id="text-home-page"> Text Ceva Chestii </div>
