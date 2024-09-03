@@ -3,13 +3,25 @@ var prevButton = document.getElementById("prev");
 var nextButton = document.getElementById("next");
 
 var numberOfPages = 5;
+var numberOfPagesNarrow = 2 * numberOfPages;
+
 var currentPage = 1;
+var currentPageNarrow = 1;
 
 var pages = [];
+var pagesNarrow = [];
 for(let i = 1; i <= numberOfPages; i++) {
     
     pages[i] = document.getElementById(`page${i}`);
     pages[i].style.zIndex = `${numberOfPages - i + 1}`;
+
+    pagesNarrow[i] = document.getElementById(`page${i}-narrow`);
+    pagesNarrow[i].style.zIndex = `${numberOfPages - i + 1}`;
+}
+for(let i = numberOfPages + 1; i <= 2 * numberOfPages; i++) {
+
+    pagesNarrow[i] = document.getElementById(`page${i}-narrow`);
+    pagesNarrow[i].style.zIndex = `${numberOfPages - i + 1}`; 
 }
 
 var nextZIndex = numberOfPages;
@@ -34,7 +46,6 @@ function animatie(id) { // -1 = previous page | 1 = next page
         }
 
         pages[currentPage].classList.remove("flipped");
-        
         pages[currentPage].style.zIndex = `${nextZIndex}`;
         nextZIndex++;
     }
@@ -42,7 +53,6 @@ function animatie(id) { // -1 = previous page | 1 = next page
         if(currentPage === numberOfPages + 1) return;
 
         pages[currentPage].classList.add("flipped");
-        
         pages[currentPage].style.zIndex = `${nextZIndex}`;
         nextZIndex++;
 
@@ -66,4 +76,20 @@ function goToPage(pageNumber) {
 
     while(currentPage != pageNumber)
         animatie(currentPage < pageNumber ? 1 : -1);
+}
+
+function animatieNarrow(id) {
+
+    if(id === -1) { // previous page
+
+        if(currentPageNarrow === 1) return;
+
+        pagesNarrow[--currentPageNarrow].classList.remove("flipped");
+    }
+    else { // next page
+
+        if(currentPageNarrow === numberOfPagesNarrow) return;
+
+        pagesNarrow[currentPageNarrow++].classList.add("flipped");
+    }
 }
