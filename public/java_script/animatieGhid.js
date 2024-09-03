@@ -93,3 +93,9 @@ function animatieNarrow(id) {
         pagesNarrow[currentPageNarrow++].classList.add("flipped");
     }
 }
+
+function goToPageNarrow(pageNumber) {
+
+    while(currentPageNarrow != pageNumber)
+        animatieNarrow(currentPageNarrow < pageNumber ? 1 : -1);
+}
