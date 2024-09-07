@@ -1,4 +1,4 @@
-import express from "express"
+import express from "express";
 import welcomePage from "./views/index.js";
 import homePage from "./views/homePage.js";
 import paginaParteneri from "./views/paginaParteneri.js";

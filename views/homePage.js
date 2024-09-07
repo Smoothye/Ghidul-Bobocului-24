@@ -15,6 +15,7 @@ const homePage = () => /*html*/ `
                     hx-trigger="click"
                     hx-target="#main"
                     hx-swap="outerHTML transition:true"
+                    hx-on:click="window.history.pushState({}, null, 'ghid')"
                 >
                     <img src="media/coperta_fata.svg" width="100%" height="100%">
                 </div>
@@ -27,6 +28,7 @@ const homePage = () => /*html*/ `
                 hx-trigger="click"
                 hx-target="#main"
                 hx-swap="outerHTML transition:true"
+                hx-on:click="window.history.pushState({}, null, 'parteneri')"
             >
                 Parteneri
             </div>
