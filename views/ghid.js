@@ -1,4 +1,3 @@
-import templateBackButton from "./templateBackButton.js";
 import templatePagina from "./templatePagina.js";
 import templatePaginaNarrow from "./templatePaginaNarrow.js";
 
@@ -6,8 +5,6 @@ const book = () => /*html*/ `
 
     <main id="main" class="flex transition" style="overflow:hidden;">
         <script src="java_script/animatieGhid.js" defer></script>
-        
-        ${templateBackButton()}
 
         <div id="book-wrapper">
 

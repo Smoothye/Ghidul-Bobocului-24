@@ -1,11 +1,8 @@
-import templateBackButton from "./templateBackButton.js";
 import templateCardParteneri from "./templateCardParteneri.js";
 
 const paginaParteneri = () => /*html*/ `
 
     <main id="main" class="transition">
-
-        ${templateBackButton()}
 
         <div class="parteneri flex flex-orizontal">
 
