@@ -5,11 +5,13 @@ const templatePagina = (pageNumber, contentFront=null, contentBack=null) => /*ht
             <div id="front${pageNumber}" class="front-content">
                 <h1> Front ${pageNumber} </h1>
             </div>
+            <div class="right-arrow"> &rarr; </div>
         </div>
         <div class="back">
             <div id="back${pageNumber}" class="back-content">
                 <h1> Back ${pageNumber} </h1>
             </div>
+            <div class="right-arrow"> &rarr; </div>
         </div>
     </div>
 `;

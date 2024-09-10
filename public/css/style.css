@@ -1,24 +1,25 @@
 :root {
+    font-family: 'Courier New', Courier, monospace;
     --page-width: 396.85px;
     --page-height: 559.37px;
-
+    
     /* ghid */
     --page-flip-duration: 1s;
     --book-move-duration: 1s;
     --page-flip-perspective: 3000px;
+
     --book-page-width: var(--page-width);
     --book-page-height: var(--page-height);
     
+    --buton-cuprins-width: 100px;
+    --buton-cuprins-height: 20px;
+
     /* parteneri */
     --card-parteneri-width: 200px;
     --card-parteneri-height: 400px;
 
     /* flex */
     --flex-item-gap: 30px;
-
-    /* back buttono */
-    --back-button-width: 50px;
-    --back-button-height: 50px;
 
     /* home page */
     --ghid-home-page-width: var(--page-width);
@@ -27,14 +28,14 @@
     --scale-factor-zoom-on-hover: 1.05;
 
     /* grid */
-    --grid-width: 80%;
+    --grid-width: 70%;
     --grid-height: 90%;
     --grid-area:
-        'topbar     topbar      topbar      topbar  '
-        'text       text        ghid        ghid    '
-        'text       text        ghid        ghid    '
-        'parteneri  parteneri   ghid        ghid    ';
-    --grid-columns-width: 1fr 2fr 1fr 2fr;
+        'topbar     topbar  '
+        'text       ghid    '
+        'text       ghid    '
+        'parteneri  ghid    ';
+    --grid-columns-width: 2fr 2fr;
     --grid-rows-height: 1fr 4fr 4fr 1fr;
 }
 
@@ -82,23 +83,27 @@ main {
     gap: var(--flex-item-gap);
 }
 
-#back-button {
-
-    position: fixed;
-    top: 10px;
-    left: 10px;
-
-    width: var(--back-button-width);
-    height: var(--back-button-height);
-    border: 1px solid black;
-
-    font-size: large;
-    font-weight: 900;
-}
-#back-button:hover {
+button {
 
     cursor: pointer;
+    border: 1px solid black;
+    border-bottom: unset;
+    background-color: transparent;
+
+    user-select: none;
 }
+
+.right-arrow, .left-arrow {
+
+    position: absolute;
+    bottom: 0;
+
+    font-size: 3rem;
+
+    z-index: 3;
+}
+.right-arrow { right: 10px; }
+.left-arrow { left: 10px; }
 
 /* tranzitie pagini */
 @keyframes fade-out {
@@ -150,7 +155,7 @@ main {
     
     :root {
 
-        --grid-columns-width: minmax(200px, 1fr) 0 minmax(70%, var(--page-width)) 0;
+        --grid-columns-width: minmax(250px, 2fr) minmax(calc(var(--page-width) / 1.2), var(--page-width));
     }
 }
 
@@ -183,6 +188,8 @@ main {
 #text-home-page {
     grid-area: text;
     background-color: green;
+
+    padding: 15px;
 }
 
 #ghid {
@@ -205,8 +212,6 @@ main {
 
     width: var(--ghid-home-page-width);
     height: var(--ghid-home-page-height);
-    /* background-color: purple; */
-
     transition: var(--viteza-zoom-on-hover);
 }
 #coperta-ghid:hover {
@@ -298,12 +303,23 @@ main {
     z-index: 1;
 
     opacity: 0;
-    cursor: pointer;
 }
 #prev {
 
     left: -100%;
     display: none;
+}
+
+#buton-cuprins {
+
+    position: absolute;
+    top: -20px;
+    left: 0;
+
+    width: var(--buton-cuprins-width);
+    height: var(--buton-cuprins-height);
+
+    transition: left var(--page-flip-duration);
 }
 
 .page {
@@ -403,13 +419,22 @@ main {
     height: 100%;
     width: 50%;
 
-    cursor: pointer;
     opacity: 0;
 
     z-index: 1;
 }
 #prev-narrow { left: 0; }
 #next-narrow { right: 0; }
+
+#buton-cuprins-narrow {
+
+    width: var(--buton-cuprins-width);
+    height: var(--buton-cuprins-height);
+
+    position: absolute;
+    left: 0;
+    top: -20px;
+}
 
 .content-narrow {
 

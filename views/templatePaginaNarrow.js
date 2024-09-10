@@ -4,6 +4,8 @@ const templatePaginaNarrow = (pageNumber, content=null) => /*html*/ `
         <div class="content-narrow">
             pagina ${pageNumber}
         </div>
+        <div class="right-arrow"> &rarr; </div>
+        <div class="left-arrow"> &larr; </div>
     </div>
 `;
 

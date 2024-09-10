@@ -1,6 +1,7 @@
 var bookWrapper = document.getElementById("book-wrapper");
 var prevButton = document.getElementById("prev");
 var nextButton = document.getElementById("next");
+var butonCuprins = document.getElementById("buton-cuprins");
 
 var numberOfPages = 5;
 var numberOfPagesNarrow = 2 * numberOfPages;
@@ -70,6 +71,8 @@ function animatie(id) { // -1 = previous page | 1 = next page
             nextButton.style.display = "none";
         }
     }
+
+    butonCuprins.style.left = (currentPage <= 3 ? "0px" : "-100px");
 }
 
 function goToPage(pageNumber) {

@@ -1,5 +1,14 @@
 import templatePagina from "./templatePagina.js";
 import templatePaginaNarrow from "./templatePaginaNarrow.js";
+import data from "../data/pagini.js";
+
+let pagini = "", paginiNarrow = "";
+
+for(let i = 1; i <= data.numarPagini / 2; i++)
+    pagini = pagini.concat(`${templatePagina(i)}`);
+
+for(let i = 1; i <= data.numarPagini; i++)
+    paginiNarrow = paginiNarrow.concat(`${templatePaginaNarrow(i)}`);
 
 const book = () => /*html*/ `
 
@@ -8,37 +17,23 @@ const book = () => /*html*/ `
 
         <div id="book-wrapper">
 
-            <button id="prev" hx-on:click="animatie(-1)"></button>
-            <button id="next" hx-on:click="animatie(1)"></button>
+            <button id="prev" onclick="animatie(-1)"></button>
+            <button id="next" onclick="animatie(1)"></button>
+            <button id="buton-cuprins" onclick="goToPage(3)"> CUPRINS </button>
 
             <div id="book">
-
-                ${templatePagina(1)}
-                ${templatePagina(2)}
-                ${templatePagina(3)}
-                ${templatePagina(4)}
-                ${templatePagina(5)}
-
+                ${pagini}
             </div> <!-- end of book -->
         </div> <!-- end of book wrapper -->
 
         <div id="book-wrapper-narrow">
 
-            <button id="prev-narrow" hx-on:click="animatieNarrow(-1)"></button>
-            <button id="next-narrow" hx-on:click="animatieNarrow(1)"></button>
+            <button id="prev-narrow" onclick="animatieNarrow(-1)"></button>
+            <button id="next-narrow" onclick="animatieNarrow(1)"></button>
+            <button id="buton-cuprins-narrow" onclick="goToPageNarrow(6)"> CUPRINS </button>
 
             <div id="book-narrow">
-
-                ${templatePaginaNarrow(1)}
-                ${templatePaginaNarrow(2)}
-                ${templatePaginaNarrow(3)}
-                ${templatePaginaNarrow(4)}
-                ${templatePaginaNarrow(5)}
-                ${templatePaginaNarrow(6)}
-                ${templatePaginaNarrow(7)}
-                ${templatePaginaNarrow(8)}
-                ${templatePaginaNarrow(9)}
-                ${templatePaginaNarrow(10)}
+                ${paginiNarrow}
             </div> <!-- end of book -->
         </div> <!-- end of book wrapper -->
 
